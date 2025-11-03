@@ -18,21 +18,24 @@ export default function Layout({ children, analytics, chat, notifications }: Lay
             <div className="bg-white rounded-lg shadow-sm p-6">{children}</div>
           </main>
 
-          <div className="flex flex-row gap-6 mb-8">
+          <div
+            className="grid grid-cols-3 gap-6 mb-8"
+            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px' }}
+          >
             <div
-              className="flex-1 border-4 border-blue-500 rounded-lg p-4 bg-white shadow-lg"
+              className="border-4 border-blue-500 rounded-lg p-4 bg-white shadow-lg"
               style={{ border: '4px solid #3b82f6', padding: '16px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
             >
               {analytics}
             </div>
             <div
-              className="flex-1 border-4 border-green-500 rounded-lg p-4 bg-white shadow-lg"
+              className="border-4 border-green-500 rounded-lg p-4 bg-white shadow-lg"
               style={{ border: '4px solid #10b981', padding: '16px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
             >
               {chat}
             </div>
             <div
-              className="flex-1 border-4 border-purple-500 rounded-lg p-4 bg-white shadow-lg"
+              className="border-4 border-purple-500 rounded-lg p-4 bg-white shadow-lg"
               style={{ border: '4px solid #8b5cf6', padding: '16px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
             >
               {notifications}
