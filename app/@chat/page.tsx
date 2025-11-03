@@ -1,22 +1,17 @@
+/* eslint-disable @next/next/no-async-client-component */
 'use client';
-import { useState, useEffect } from 'react';
-
-export default function Chat() {
-  const [shouldThrow, setShouldThrow] = useState(false);
-
-  useEffect(() => {
-    // Nakon 2 sekunde postavi flag za grešku
-    const timer = setTimeout(() => {
-      setShouldThrow(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (shouldThrow) {
-    // Greška se baca u React lifecycle-u (ne odmah prilikom prvog rendera)
-    throw new Error('Simulirana greška u chat slotu');
-  }
-
-  return <div>Chat panel je uspešno učitan!</div>;
+// Na primer, simulacija asinhrone funkcije koja vraća podatke
+async function getChatData(): Promise<string> {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('Podaci sa chata su učitani!');
+    }, 3000); // 3 sekunde čeka
+  });
 }
+
+export default async function Chat() {
+  const data = await getChatData();
+
+  return <div>{data}</div>;
+}
+
