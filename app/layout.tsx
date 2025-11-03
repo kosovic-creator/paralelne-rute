@@ -18,7 +18,7 @@ export default function Layout({ children, analytics, chat, notifications }: Lay
             <div className="bg-white rounded-lg shadow-sm p-6">{children}</div>
           </main>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 border-2 p-4 rounded-lg bg-white shadow-sm">
             <div>{analytics}</div>
             <div>{chat}</div>
             <div>{notifications}</div>
