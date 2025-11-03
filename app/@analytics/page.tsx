@@ -1,4 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+'use client';
+
+import { useEffect, useState } from "react";
+
 export default function Analytics() {
+  const [error, setError] = useState<boolean>(true);
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full">
       <div className="bg-linear-to-r from-blue-500 to-blue-600 p-4">
