@@ -1,16 +1,11 @@
 type LayoutProps = {
-  children: React.ReactNode;    // glavni sadržaj (default slot)
-  analytics?: React.ReactNode;  // parallel route slot @analytics
-  chat?: React.ReactNode;       // parallel route slot @chat
-  notifications?: React.ReactNode; // parallel route slot @notifications
+  children: React.ReactNode;
+  analytics?: React.ReactNode;
+  chat?: React.ReactNode;
+  notifications?: React.ReactNode;
 };
 
-export default function Layout({
-  children,
-  analytics,
-  chat,
-  notifications,
-}: LayoutProps) {
+export default function Layout({ children, analytics, chat, notifications }: LayoutProps) {
   return (
     <html lang="sr">
       <body className="bg-gray-50 min-h-screen">
@@ -20,28 +15,13 @@ export default function Layout({
           </header>
 
           <main className="mb-8">
-            {/* Glavni sadržaj */}
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              {children}
-            </div>
+            <div className="bg-white rounded-lg shadow-sm p-6">{children}</div>
           </main>
 
-          {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <div>
-              {/* Analytics slot */}
-              {analytics}
-            </div>
-
-            <div>
-              {/* Chat slot */}
-              {chat}
-            </div>
-
-            <div>
-              {/* Notifications slot */}
-              {notifications}
-            </div>
+            <div>{analytics}</div>
+            <div>{chat}</div>
+            <div>{notifications}</div>
           </div>
 
           <footer className="bg-white shadow-sm rounded-lg p-6 text-center">

@@ -4,12 +4,12 @@ import { useEffect } from 'react';
 
 export default function ChatError({ error, reset }: { error: Error; reset: () => void }) {
   useEffect(() => {
-    console.error(error);
+    console.error('Greška u chat slotu:', error);
   }, [error]);
 
   return (
     <div>
-      Došlo je do greške u učitavanju chat panela.
+      <p>Došlo je do greške u chat slotu: {error.message}</p>
       <button onClick={() => reset()}>Pokušaj ponovo</button>
     </div>
   );
